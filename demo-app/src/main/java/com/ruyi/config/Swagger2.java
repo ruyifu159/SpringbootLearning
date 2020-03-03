@@ -68,8 +68,8 @@ public class Swagger2 {
     	                .responseModel(new ModelRef("Error"))   // ???
     	                .build()))
     	      
-    	        .securitySchemes(newArrayList(apiKey()))    // 提供的securtiy schemas有 ApiKey, BasicAuth, OAuth
-    	        .securityContexts(newArrayList(securityContext()))  //  ???
+    	        //.securitySchemes(newArrayList(apiKey()))    // 提供的securtiy schemas有 ApiKey, BasicAuth, OAuth
+    	        //.securityContexts(newArrayList(securityContext()))  //  ???
     	       
     	        .enableUrlTemplating(true)
     	        .globalOperationParameters(

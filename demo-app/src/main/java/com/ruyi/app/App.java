@@ -63,7 +63,7 @@ public class App
 
 	@RequestMapping("/testEureka")
 	public String ServiceUrl() {
-		InstanceInfo instance = discoveryClient.getNextServerFromEureka("hello-service", false);
+		InstanceInfo instance = discoveryClient.getNextServerFromEureka("demo-app", false);
 
 		return instance.getHomePageUrl();
 	}

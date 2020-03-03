@@ -8,18 +8,18 @@ spring:
     name: demo-app  # 应用的名称
     admin:
       enabled: true  # 启用远程管理spring应用  
-  http:
-    log-request-details: false  #  记录请求的详细日志信息
+  #http:
+  #  log-request-details: false  #  记录请求的详细日志信息
   
   ## devtools
   devtools:
-    add-properties: false # 取消属性的默认设置
+    #add-properties: false # 取消属性的默认设置
     restart:
       log-condition-evaluation-delta: false  # 禁用评估日志
       exclude: static/**,public/**   # 设置不需要重启服务的目录改动
       additional-paths: p/**  # 设置其他的路径改动后重启服务
       enabled: true  # 设置是否禁用重启
-      trigger-file: .reloadtrigger  # 指定文件发生变化后，才重启
+      #trigger-file: .reloadtrigger  # 指定文件发生变化后，才重启
       poll-interval: 2s # 设置间隔时间来监控文件系统的变化
       quiet-period: 1s
     livereload:
@@ -35,7 +35,7 @@ spring:
   # spring.main.
   main:
     log-startup-info: false
-    lazy-initialization: true  
+  #  lazy-initialization: true  
       
   ## profile
   profiles:
@@ -47,7 +47,7 @@ spring:
     url: jdbc:dm://localhost:5236/DAMENG
     username: RUYI
     password: 1234567890
-
+ 
   ## ThymeLeaf 模板
   thymeleaf: 
     mode: HTML5  # 模板的模式，支持 HTML, XML TEXT JAVASCRIPT
@@ -74,5 +74,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/  # eureka server端口
-    refresh:
-      enable: false
