@@ -68,18 +68,19 @@ public class Swagger2 {
     	                .responseModel(new ModelRef("Error"))   // ???
     	                .build()))
     	      
-    	        //.securitySchemes(newArrayList(apiKey()))    // 提供的securtiy schemas有 ApiKey, BasicAuth, OAuth
-    	        //.securityContexts(newArrayList(securityContext()))  //  ???
+    	        .securitySchemes(newArrayList(apiKey()))    // 提供的securtiy schemas有 ApiKey, BasicAuth, OAuth
+    	        .securityContexts(newArrayList(securityContext()))  //  ???
     	       
     	        .enableUrlTemplating(true)
-    	        .globalOperationParameters(
-    	            newArrayList(new ParameterBuilder()
-    	                .name("someGlobalParameter")
-    	                .description("Description of someGlobalParameter")
-    	                .modelRef(new ModelRef("string"))
-    	                .parameterType("query")
-    	                .required(true)
-    	                .build()))
+    	        // api 接口全局参数的配置
+//    	        .globalOperationParameters(
+//    	            newArrayList(new ParameterBuilder()
+//    	                .name("someGlobalParameter")
+//    	                .description("Description of someGlobalParameter")
+//    	                .modelRef(new ModelRef("string"))
+//    	                .parameterType("query")
+//    	                .required(true)
+//    	                .build()))
     	        .tags(new Tag("Hello World接口", "所有与Hello World相关的接口说明"))   // 接口的标题信息
     	        //.additionalModels(typeResolver.resolve(AdditionalModel.class))  // ???
     	        ;

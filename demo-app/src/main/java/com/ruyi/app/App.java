@@ -33,12 +33,12 @@ import io.swagger.annotations.ApiOperation;
  */
 @RestController
 @EnableAutoConfiguration
-@ComponentScan
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableCircuitBreaker 
 @Lazy(false)  // 禁用懒加载
 @MapperScan("com.ruyi.user.mapper")
+@ComponentScan(basePackages = "com.ruyi")  
 public class App 
 {
 	@SuppressWarnings("unused")
@@ -79,7 +79,7 @@ public class App
 
 	@RequestMapping("/hello")
 	@HystrixCommand(fallbackMethod = "helloFallback", commandProperties = {
-			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")
+	@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")
 	})
 	public String hello() {
 		return restTemplate.getForObject("http://spring-boot-webmvc", String.class);
