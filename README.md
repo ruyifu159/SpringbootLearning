@@ -34,6 +34,9 @@ maven仓库没有DmJdbcDriver17.jarr包因此无法在线获取依赖, 需通过
 mvn install:install-file -DgroupId=com.dm -DartifactId=DmJdbcDriver -Dversio  
 n=1.7.0 -Dpackaging=jar -Dfile=D:\DmJdbcDriver17.jar  
 
+## 问题列表
+- [如何配置不需要用户验证、鉴权的请求？](https://github.com/ruyifu159/SpringbootLearning/issues/2)
+
 ## 参考资料:
 - [Spring Boot Reference Documentation.](https://docs.spring.io/spring-boot/docs/2.2.5.RELEASE/reference/html/)
 - [Spring Cloud Netflix.](https://cloud.spring.io/spring-cloud-netflix/reference/html/)
