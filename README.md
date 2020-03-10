@@ -28,7 +28,7 @@ eureka注册中心地址: http://localhost:8761/
 swagger open api接口说明: http://localhost:8081/swagger-ui.html     
 测试使用eureka client远程调用服务: http://localhost:8081/common/testEureka  
 测试使用rest远程调用hystrix断路器集成: http://localhost:8081/common/hello  
-测试数据库访问的服务接口: http://localhost:8081/user/showUser
+测试数据库访问的服务接口: http://localhost:8081/user/showUser  
 备注:  
 maven仓库没有DmJdbcDriver17.jarr包因此无法在线获取依赖, 需通过如下命令安装到本地maven仓库中：  
 mvn install:install-file -DgroupId=com.dm -DartifactId=DmJdbcDriver -Dversio  
