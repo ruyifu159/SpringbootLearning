@@ -1,17 +1,19 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>demo</artifactId>
-    <groupId>com.ruyi</groupId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>demo</artifactId>
+		<groupId>com.ruyi</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 
-  <artifactId>demo-app</artifactId>
-  <name>demo-app</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+	<artifactId>demo-app</artifactId>
+	<name>demo-app</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
 
-  <description />
+	<description />
 	<developers>
 		<developer />
 	</developers>
@@ -95,6 +97,31 @@
 		<dependency>
 			<groupId>javax.websocket</groupId>
 			<artifactId>javax.websocket-api</artifactId>
+		</dependency>
+		<!-- 集成redis -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<!-- 集成spring security -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- jwt -->
+        <dependency>
+    		<groupId>io.jsonwebtoken</groupId>
+    		<artifactId>jjwt</artifactId>
+    		<version>0.9.0</version>
 		</dependency>
 		<!-- test -->
 		<dependency>

@@ -1,4 +1,4 @@
-package com.ruyi.config;
+package com.ruyi.app;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

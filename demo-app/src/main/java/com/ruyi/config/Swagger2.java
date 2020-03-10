@@ -3,6 +3,7 @@ package com.ruyi.config;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +39,6 @@ import static com.google.common.collect.Lists.*;
 import static springfox.documentation.schema.AlternateTypeRules.*;
 
 @Configuration
-@EnableSwagger2
 public class Swagger2 {
 	/**
      * 通过 createRestApi函数来构建一个DocketBean

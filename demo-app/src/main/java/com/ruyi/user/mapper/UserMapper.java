@@ -2,6 +2,7 @@ package com.ruyi.user.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -14,4 +15,7 @@ public interface UserMapper {
 	
 	@Select("select * from \"user\" where \"userName\"=#{userName}")
 	User selectByPrimaryKey(String userName);
+	
+	@Insert("insert into \"user\"(\"id\", \"userName\", \"password\", \"role\") values(#{user.id}, #{user.userName}, #{user.password}, #{user.role})")
+	int save(User user);
 }
