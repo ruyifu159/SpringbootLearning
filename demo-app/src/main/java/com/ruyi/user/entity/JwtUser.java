@@ -12,6 +12,10 @@ public class JwtUser implements UserDetails {
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = -1506542014267510621L;
+	/**
+	 * 
+	 */
 	//private static final long serialVersionUID = -1506542014267510621L;
 	
 	private Integer id;

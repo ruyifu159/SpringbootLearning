@@ -3,7 +3,6 @@ package com.ruyi.config;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +12,6 @@ import org.springframework.web.context.request.async.DeferredResult;
 import com.fasterxml.classmate.TypeResolver;
 
 import springfox.documentation.service.Tag;
-import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.builders.ResponseMessageBuilder;
@@ -33,8 +31,6 @@ import springfox.documentation.swagger.web.SecurityConfigurationBuilder;
 import springfox.documentation.swagger.web.TagsSorter;
 import springfox.documentation.swagger.web.UiConfiguration;
 import springfox.documentation.swagger.web.UiConfigurationBuilder;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
 import static com.google.common.collect.Lists.*;
 import static springfox.documentation.schema.AlternateTypeRules.*;
 
