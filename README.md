@@ -6,7 +6,17 @@ OS - win7
 Java - 1.8.0_241 x64  
 maven - Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)  
 sts -  4.5.1.RELEASE  
-达梦数据库 - 7.6.0.197(Build 2019.09.16) 
+达梦数据库 - 7.6.0.197(Build 2019.09.16)   
+备注：maven仓库全局配置阿里云镜像仓库：https://maven.aliyun.com/mvn/view（解决国内下载依赖jar包速度慢的问题）
+在maven安装目录/conf/settings.xml中的mirrors标签下添加需要的镜像服务，格式如下：
+```
+<mirror>
+      <id>aliyun-jcenter</id>
+      <mirrorOf>*</mirrorOf>
+      <name>aliyun jcenter</name>
+      <url>https://maven.aliyun.com/repository/jcenter</url>
+</mirror>
+```
 
 ## 项目说明
 - demo 
