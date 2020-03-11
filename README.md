@@ -21,7 +21,15 @@ sts -  4.5.1.RELEASE
 ## 项目说明
 - demo 
     - eureka-server     服务注册中心
-    - demo-app          业务应用服务
+    - demo-app          业务应用服务（配置不需要用户验证、鉴权的请求不生效？？？）
+      -  配置集成swagger2 api
+      -  配置集成devtools
+      -  配置集成mybatis  
+      -  配置集成ThymeLeaf
+      -  配置集成hystrix
+      -  配置集成eureka client
+      -  配置集成security JWT
+   - demo-security          配置安全的业务应用服务
       -  配置集成swagger2 api
       -  配置集成devtools
       -  配置集成mybatis  
@@ -39,6 +47,7 @@ swagger open api接口说明: http://localhost:8081/swagger-ui.html
 测试使用eureka client远程调用服务: http://localhost:8081/common/testEureka  
 测试使用rest远程调用hystrix断路器集成: http://localhost:8081/common/hello  
 测试数据库访问的服务接口: http://localhost:8081/user/showUser  
+测试配置了用户验证的接口：http://localhost:8080/user/index  
 备注:  
 maven仓库没有DmJdbcDriver17.jarr包因此无法在线获取依赖, 需通过如下命令安装到本地maven仓库中：  
 mvn install:install-file -DgroupId=com.dm -DartifactId=DmJdbcDriver -Dversio  
@@ -51,4 +60,6 @@ n=1.7.0 -Dpackaging=jar -Dfile=D:\DmJdbcDriver17.jar
 - [Spring Boot Reference Documentation.](https://docs.spring.io/spring-boot/docs/2.2.5.RELEASE/reference/html/)
 - [Spring Cloud Netflix.](https://cloud.spring.io/spring-cloud-netflix/reference/html/)
 - [Springfox Reference Documentation.](http://springfox.github.io/springfox/docs/current/)
+- [Spring Security Reference](https://docs.spring.io/spring-security/site/docs/5.3.0.RELEASE/reference/html5/#exploits)  
+
 - [Springboot+Spring-Security+JWT+Redis实现restful Api的权限管理以及token管理（超详细用爱发电版）](https://www.jianshu.com/p/29b12ccbc215)
