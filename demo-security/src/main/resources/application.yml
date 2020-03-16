@@ -41,12 +41,46 @@ spring:
     active: dev
 
   ## datasouce配置
-  datasource: 
-    driver-class-name: dm.jdbc.driver.DmDriver
-    url: jdbc:dm://localhost:5236/DAMENG
-    username: RUYI
-    password: 1234567890
- 
+  # dm数据库配置
+  # datasource: 
+  #  driver-class-name: dm.jdbc.driver.DmDriver 
+  #  url: jdbc:dm://localhost:5236/DAMENG
+  #  username: RUYI
+  #  password: 1234567890
+  # h2 数据库配置
+  #----控制台配置
+  h2:
+    console:
+      path: /h2-console 
+      enabled: true
+      settings: 
+        web-allow-others: true
+  #-----驱动配置 druid https://github.com/alibaba/druid
+  datasource:
+    url: jdbc:h2:file:D:/db/h2/testdb;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE
+    username: sa 
+    password: sa
+    driverClassName: org.h2.Driver
+    druid: 
+      # 配置初始化大小、最小、最大
+      initial-size: 5
+      max-active: 20
+      min-idle: 5
+      # 配置获取连接等待超时的时间 毫秒
+      max-wait: 60000
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      ######Druid监控配置######
+      #下面配置说明请参考Druid Github Wiki，配置_配置WebStatFilter
+      web-stat-filter:
+        exclusions: .js,.gif,.jpg,.png,.css,.ico,/druid/*
+      #下面配置说明请参考Druid Github Wiki，配置_StatViewServlet配置
+      stat-view-servlet:
+        loginUsername: druid
+        loginPassword: druid
+
   ## ThymeLeaf 模板
   thymeleaf: 
     mode: HTML5  # 模板的模式，支持 HTML, XML TEXT JAVASCRIPT
@@ -78,11 +112,11 @@ spring:
         min-idle: 0 #连接池中的最小空闲连接
 
   ## securtiy 默认用户名/密码
-  #security:
-  #  user:
-  #    name: ruyi
-  #    password: ruyi
-  #    roles: ADMIN
+  security:
+    user:
+      name: ruyi
+      password: ruyi
+      roles: USER
 
 ## mybatis 
 mybatis: 
