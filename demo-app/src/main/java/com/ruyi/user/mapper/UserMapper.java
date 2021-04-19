@@ -13,9 +13,9 @@ public interface UserMapper {
 	
 	List<User> selectAllUserInfo();
 	
-	@Select("select * from \"user\" where \"userName\"=#{userName}")
+	@Select("select * from userinfo where username=#{userName}")
 	User selectByPrimaryKey(String userName);
 	
-	@Insert("insert into \"user\"(\"id\", \"userName\", \"password\", \"role\") values(#{user.id}, #{user.userName}, #{user.password}, #{user.role})")
+	@Insert("insert into userinfo(id, username, password, role) values(#{user.id}, #{user.userName}, #{user.password}, #{user.role})")
 	int save(User user);
 }

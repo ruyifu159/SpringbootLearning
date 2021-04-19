@@ -1,0 +1,77 @@
+## 服务器配置
+server: 
+  port: 8088
+
+## spring配置
+spring: 
+  application:
+    name: demo-jdbc  # 应用的名称
+    admin:
+      enabled: true  # 启用远程管理spring应用  
+  #http:
+  #  log-request-details: false  #  记录请求的详细日志信息
+  
+  ## devtools
+  devtools:
+    #add-properties: false # 取消属性的默认设置
+    restart:
+      log-condition-evaluation-delta: false  # 禁用评估日志
+      exclude: static/**,public/**   # 设置不需要重启服务的目录改动
+      additional-paths: p/**  # 设置其他的路径改动后重启服务
+      enabled: true  # 设置是否禁用重启
+      #trigger-file: .reloadtrigger  # 指定文件发生变化后，才重启
+      poll-interval: 2s # 设置间隔时间来监控文件系统的变化
+      quiet-period: 1s
+    livereload:
+      enabled: true  # 资源发生改变后，触发浏览器的刷新
+    remote:
+      secret: 123456  # 远程调试密钥，需要受信任的https安全连接
+
+  ## 
+  # 关闭springboot启动时的日志信息
+  # 如果需要在启动时额外的添加日志信息则重写SpringApplication类的logStartupInfo方法
+  # 懒加载
+  # also, SpringApplicationBuilder 的  lazyInitialization 方法 或者 SpringApplication 的 setLazyInitialization 方法
+  # spring.main.
+  main:
+    log-startup-info: false
+  #  lazy-initialization: true  
+      
+  ## profile
+  profiles:
+    active: dev
+
+  ## h2
+  h2:
+    console:
+      enabled: true
+
+  ## datasouce配置
+#  datasource: 
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:D:/db/h2/testdb
+#    username: sa
+#    password: sa
+  datasource: 
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: system
+    password: orcl
+ 
+  ## ThymeLeaf 模板
+  thymeleaf: 
+    mode: HTML5  # 模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    servlet:
+      content-type: text/html  # 内容类别,可不用配置
+    cache: false  # 开发配置为false,避免修改模板还要重启服务器
+    prefix: classpath:/templates/  # 配置模板路径，默认是templates，可以不用配置
+ 
+  ## web
+  # 自定义web资源拦截目录
+  #mvc:
+  #  static-path-pattern: /resources/**
+
+## 项目日志配置文件路径     
+logging: 
+  config: classpath:logback-spring.xml 
+

@@ -1,2 +1,10 @@
 /.project
-/demo-security.7z
+/demo-doc/.classpath
+/demo-doc/.project
+/demo-doc/target/
+/demo-doc/.settings/
+
+/demo-rmiserver/.classpath
+/demo-rmiserver/.project
+/demo-rmiserver/target/
+/demo-rmiserver/.settings/

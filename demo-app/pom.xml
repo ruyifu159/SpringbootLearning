@@ -16,7 +16,7 @@
 	<description />
 	<developers>
 		<developer />
-	</developers>
+	</developers> 
 	<licenses>
 		<license />
 	</licenses>
@@ -67,12 +67,22 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>2.1.1</version>
 		</dependency>
-		<!-- dm driver -->
+		<!-- oracle数据库 -->
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc</artifactId>
+			<version>6</version>
+		</dependency>
+		<!-- dm driver -->
+		<!-- dependency>
 			<groupId>com.dm</groupId>
 			<artifactId>DmJdbcDriver</artifactId>
 			<version>1.7.0</version>
-		</dependency>
+		</dependency -->
 		<!-- ThymeLeaf 依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -114,14 +124,20 @@
 		</dependency>
 		<!-- 集成spring security -->
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <!-- jwt -->
-        <dependency>
-    		<groupId>io.jsonwebtoken</groupId>
-    		<artifactId>jjwt</artifactId>
-    		<version>0.9.0</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!-- jwt -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.sun.jna/jna -->
+		<dependency>
+			<groupId>com.sun.jna</groupId>
+			<artifactId>jna</artifactId>
+			<version>3.0.9</version>
 		</dependency>
 		<!-- test -->
 		<dependency>

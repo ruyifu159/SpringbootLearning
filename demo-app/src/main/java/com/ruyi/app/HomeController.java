@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.netflix.appinfo.InstanceInfo;
-import com.netflix.discovery.EurekaClient;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
@@ -33,6 +31,7 @@ public class HomeController {
 		return "Test Swagger2!";
 	}
 
+	/*
 	@Autowired
 	private EurekaClient discoveryClient;
 
@@ -42,7 +41,7 @@ public class HomeController {
 
 		return instance.getHomePageUrl();
 	}
-
+	*/
 	@Bean
 	@LoadBalanced
 	public RestTemplate getRestTemplate() {

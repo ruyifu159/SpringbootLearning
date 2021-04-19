@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>demo</name>
-	<description>ѧϰspringboot</description>
+	<description>??springboot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -17,5 +17,12 @@
   <modules>
     <module>demo-app</module>
     <module>demo-eurekaserver</module>
+    <module>demo-security</module>
+    <module>demo-xml</module>
+    <module>demo-cors</module>
+    <module>demo-jdbc</module>
+    <module>demo-rmiserver</module>
+    <module>demo-doc</module>
+    <module>demo-activemq</module>
   </modules>
 </project>

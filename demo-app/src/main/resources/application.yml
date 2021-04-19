@@ -42,12 +42,17 @@ spring:
     active: dev
 
   ## datasouce配置
+#  datasource: 
+#    driver-class-name: dm.jdbc.driver.DmDriver
+#    url: jdbc:dm://localhost:5236/DAMENG
+#    username: RUYI
+#    password: 1234567890
   datasource: 
-    driver-class-name: dm.jdbc.driver.DmDriver
-    url: jdbc:dm://localhost:5236/DAMENG
-    username: RUYI
-    password: 1234567890
- 
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: system
+    password: orcl
+     
   ## ThymeLeaf 模板
   thymeleaf: 
     mode: HTML5  # 模板的模式，支持 HTML, XML TEXT JAVASCRIPT
@@ -87,7 +92,7 @@ mybatis:
 ## 项目日志配置文件路径     
 logging: 
   config: classpath:logback-spring.xml 
-
+ 
 ## eureka client  
 eureka: 
   client: 

@@ -1,9 +1,7 @@
 package com.ruyi.user.controller;
 
+import java.util.Enumeration;
 import java.util.Map;
-
-//import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -29,7 +27,16 @@ public class UserController {
 	@RequestMapping(value = "/showUser", method = RequestMethod.GET)
 	public ModelAndView startPage(HttpServletRequest req, HttpServletResponse resp) {
 		ModelAndView mv = new ModelAndView();
-		
+		Enumeration<String> a=  req.getAttributeNames();
+		String s = "";
+		int i = 0;
+		while(a.hasMoreElements()) {
+			if (i == 0) {
+				s += "?";
+			} 
+			s = a.nextElement() + "=" + req.getAttribute(a.nextElement()) + "&";
+		}
+		s = s.substring(0, s.length() - 1);
 		//List<User> userInfoList = userService.queryAllUserInfo();
 		/*
 		for (User user : userInfoList) {

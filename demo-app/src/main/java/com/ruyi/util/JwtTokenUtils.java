@@ -15,7 +15,7 @@ public class JwtTokenUtils {
     private static final String SECRET = "jwtsecretdemo";
     private static final String ISS = "ruyi";
 
-    // 角色的key
+    // 角色的key 
     private static final String ROLE_CLAIMS = "rol";
     
     // 过期时间是3600秒，既是1个小时
