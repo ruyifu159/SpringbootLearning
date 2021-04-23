@@ -1,0 +1,85 @@
+## 服务器配置
+server: 
+  port: 8881
+
+## spring配置
+spring: 
+  application:
+    name: demo-kafka  # 应用的名称
+    admin:
+      enabled: true  # 启用远程管理spring应用  
+  #http:
+  #  log-request-details: false  #  记录请求的详细日志信息
+  
+  ## devtools
+  devtools:
+    #add-properties: false # 取消属性的默认设置
+    restart:
+      log-condition-evaluation-delta: false  # 禁用评估日志
+      exclude: static/**,public/**   # 设置不需要重启服务的目录改动
+      additional-paths: p/**  # 设置其他的路径改动后重启服务
+      enabled: true  # 设置是否禁用重启
+      #trigger-file: .reloadtrigger  # 指定文件发生变化后，才重启
+      poll-interval: 2s # 设置间隔时间来监控文件系统的变化
+      quiet-period: 1s
+    livereload:
+      enabled: true  # 资源发生改变后，触发浏览器的刷新
+    remote:
+      secret: 123456  # 远程调试密钥，需要受信任的https安全连接
+
+  ## 
+  # 关闭springboot启动时的日志信息
+  # 如果需要在启动时额外的添加日志信息则重写SpringApplication类的logStartupInfo方法
+  # 懒加载
+  # also, SpringApplicationBuilder 的  lazyInitialization 方法 或者 SpringApplication 的 setLazyInitialization 方法
+  # spring.main.
+  main:
+    log-startup-info: false
+  #  lazy-initialization: true  
+      
+  ## profile
+  profiles:
+    active: dev
+
+  ## ThymeLeaf 模板
+  thymeleaf: 
+    mode: HTML5  # 模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    servlet:
+      content-type: text/html  # 内容类别,可不用配置
+    cache: false  # 开发配置为false,避免修改模板还要重启服务器
+    prefix: classpath:/templates/  # 配置模板路径，默认是templates，可以不用配置
+ 
+  ## web
+  # 自定义web资源拦截目录
+  #mvc:
+  #  static-path-pattern: /resources/**
+  
+  ## 国际化配置???
+  messages:
+    basename: i18n/messages,i18n/messages_zh
+    fallback-to-system-locale: false
+
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092  # kafka集群
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer     # Kafka提供的序列化和反序列化类
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      retries: 0   # 重试次数
+      acks: 1      # 应答级别:多少个分区副本备份完成时向生产者发送ack确认(可选0、1、all/-1)
+      batch-size: 16384   # 批量大小
+      properties:
+        linger:
+          ms: 0    # 提交延时
+                   # 当生产端积累的消息达到batch-size或接收到消息linger.ms后,生产者就会将消息提交给kafka
+                   # linger.ms为0表示每接收到一条消息就提交给kafka,这时候batch-size其实就没用了
+    
+## 项目日志配置文件路径     
+logging: 
+  config: classpath:logback-spring.xml 
+ 
+## eureka client  
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: http://localhost:8761/eureka/  # eureka server端口     
+    eureka-server-read-timeout-seconds: 30 
