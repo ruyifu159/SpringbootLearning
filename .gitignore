@@ -8,3 +8,13 @@
 /demo-rmiserver/.project
 /demo-rmiserver/target/
 /demo-rmiserver/.settings/
+
+/demo-kafka/.classpath
+/demo-kafka/.project
+/demo-kafka/target/
+/demo-kafka/.settings/
+
+/demo-eurekaserver/.classpath
+/demo-eurekaserver/.project
+/demo-eurekaserver/target/
+/demo-eurekaserver/.settings/

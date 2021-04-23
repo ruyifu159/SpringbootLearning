@@ -7,9 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>com.ruyi</groupId>
   <artifactId>demo-cors</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
 
   <name>demo-cors</name>
   <!-- FIXME change it to the project's website -->

@@ -85,6 +85,30 @@ spring:
       password: ruyi
       roles: ADMIN
 
+  ## kafka
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092 # kafka集群
+    consumer:
+      auto-offset-reset: earliest  # 当kafka中没有初始offset或offset超出范围时将自动重置offset; 
+                                   # earliest:重置为分区中最小的offset;
+                                   # latest:重置为分区中最新的offset(消费分区中新产生的数据);
+                                   # none:只要有一个分区不存在已提交的offset,就抛出异常;
+      properties:
+        group:
+          id: defaultConsumerGroup  # 默认的消费组id
+        session:
+          timeout:
+            ms: 120000   # 消费会话超时时间(超过这个时间consumer没有发送心跳，就会触发rebalance操作)
+        request:
+          timeout:
+            ms: 180000   # 消费请求超时时间
+      enable-auto-commit: true   # 是否自动提交offset
+      auto-commit-interval: 1000  # 提交offset延时(即接收到消息多久后提交offset)
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer  # kafka提供的反序列化类
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      missing-topics-fatal: false  # 消费端监听的topic不存在时，项目启动会报错
+
 ## mybatis 
 mybatis: 
   mapper-locations: classpath:mapping/*Mapping.xml 

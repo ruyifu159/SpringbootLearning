@@ -24,5 +24,6 @@
     <module>demo-rmiserver</module>
     <module>demo-doc</module>
     <module>demo-activemq</module>
+    <module>demo-kafka</module>
   </modules>
 </project>
